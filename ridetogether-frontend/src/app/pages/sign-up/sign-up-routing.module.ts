@@ -6,6 +6,7 @@ import { SignUpRideComponent } from './sign-up-ride/sign-up-ride.component';
 import { SignUpTrakingComponent } from './sign-up-traking/sign-up-traking.component';
 
 import { SignUpPage } from './sign-up.page';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'location',
         component: SignUpLocationComponent
+      },
+      {
+        path: 'signup',
+        component: SignUpComponent
       }
     ]
 
