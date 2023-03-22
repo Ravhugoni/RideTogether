@@ -1,0 +1,23 @@
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .card{
+    border-radius: 34px;
+    color: black;
+  }
+
+  .headerFont{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    justify-content: center;
+    color: #E76422;
+
+}

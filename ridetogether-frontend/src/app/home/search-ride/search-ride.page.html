@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pickup & Destination</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form>
+    <div id="search-container" class="ion-text-center">
+        <ion-item id="input-group">
+          <ion-label><ion-icon aria-hidden="true" name="home"></ion-icon></ion-label>
+          <ion-input placeholder="Pickup"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><ion-icon aria-hidden="true" name="menu"></ion-icon></ion-label>
+          <ion-input placeholder="Destination"></ion-input>
+        </ion-item>
+      <br><br>
+    </div>
+    <div class="ion-text-center">
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col>
+            <ion-button id="getStarted" fill="outline">User Default</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button id="getStarted">Use Map</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <button class="ion-text-center" id="search-btn" (click)="searchVehicle()">Search...</button>
+    </div>
+    </form>
+
+    <ion-card class="available-card" *ngIf="availableVehicle != ''">
+      <ion-card-header class="ion-text-center">
+        <ion-card-title>Available Cars</ion-card-title>
+        <ion-card-subtitle>Please select car below.</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let obj of availableVehicle">
+            <ion-thumbnail slot start>
+              <img alt="Silhouette of mountains" src="../../../assets/icon/favicon.png" />
+            </ion-thumbnail>
+            <ion-label [routerLink]="['/tab/home/booking',obj.carID]">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-label>{{obj.carName}}</ion-label>
+                    <ion-label>
+                      <span>8 mins </span>
+                      <span>{{obj.seatNo}} users</span>
+                    </ion-label>
+                  </ion-col>
+                  <ion-col>
+                    <ion-label>R10/km</ion-label>
+                  </ion-col>
+                </ion-row>
+                </ion-grid>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-text-center">
+      <p *ngIf="availableVehicle == ''">Please search for available vehicle</p>
+    </div>
+</ion-content>

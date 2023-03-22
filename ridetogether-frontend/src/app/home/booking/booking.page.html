@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/home/search-ride"></ion-back-button>
+    </ion-buttons>
+    <ion-title>booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="available-card"  *ngFor="let obj of fullData">
+    <ion-card-header class="">
+      <ion-card-title>Driver Details</ion-card-title>
+      <ion-card-subtitle>Driver Name: {{obj.fullname}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+          <ion-label [routerLink]="['/tab/home/booking',obj.carID]">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-thumbnail slot start>
+                    <img alt="Silhouette of mountains" src="../../../assets/icon/favicon.png" />
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col>
+                 <ion-label>
+                    <span>Phone Number</span><br>
+                    <span>{{obj.phone | uppercase}}</span>
+                  </ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-label>
+                    <span>Rate</span><br>
+                    <span>{{obj.seatNo}}</span>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+          </ion-label>
+      </ion-list>
+    </ion-card-content>
+    <div class="ion-text-center"> 
+      <ion-button fill="clear" >Call Driver</ion-button>
+      <ion-button fill="clear" [routerLink]="['/chats',obj.userID]">Send Chat</ion-button>
+    </div>
+  </ion-card>
+
+
+  <ion-card class="available-card"  *ngFor="let obj of fullData">
+    <ion-card-header class="">
+      <ion-card-title>Car Details</ion-card-title>
+      <ion-card-subtitle>Car Name: {{obj.carName}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <!-- <ion-item > -->
+          
+          <ion-label [routerLink]="['/tab/home/booking',obj.carID]">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-thumbnail slot start>
+                    <img alt="Silhouette of mountains" src="../../../assets/icon/favicon.png" />
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col>
+                  <!-- <ion-label>{{obj.carName}}</ion-label> -->
+                  <ion-label>
+                    <span>Number Plate</span><br>
+                    <span>{{obj.numberPlate | uppercase}}</span>
+                  </ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-label>
+                    <span>Make</span><br>
+                    <span>{{obj.make}}</span>
+                  </ion-label>
+                </ion-col>
+                
+              </ion-row>
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-label>
+                    <span><b>Price : </b></span>
+                    <span>R59</span>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+          </ion-label>
+      </ion-list>
+    </ion-card-content>
+    <div class="ion-text-center">
+      <ion-button fill="clear" [routerLink]="['/tab/chat']">Share Ride</ion-button>
+      <ion-button fill="clear" [routerLink]="['/tab/home']">Cancel</ion-button>
+    </div>
+  </ion-card>
+
+
+  <div class="ion-text-center">
+    <ion-button class="ion-text-center" fill="outline" id="schedule-btn">Schedule Ride</ion-button>
+  </div>
+
+  <div class="ion-text-center" *ngFor="let obj2 of fullData">
+    <button class="ion-text-center" id="booking-btn" (click)="booking(obj2)">Book Now</button>
+  </div>
+
+</ion-content>

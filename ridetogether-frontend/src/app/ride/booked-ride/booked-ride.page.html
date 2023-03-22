@@ -1,0 +1,92 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/rides"></ion-back-button>
+    </ion-buttons>
+    <ion-title>booked-ride</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let obj of driver">
+        <h2 class="ion-text-center"><b>Driver</b></h2>
+        <ion-card class="available-card" >
+          <ion-card-header class="">
+            <ion-card-title>Name: {{obj.fullname}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+                <ion-label>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <ion-thumbnail slot start>
+                          <img alt="Silhouette of mountains" src="../../../assets/icon/favicon.png" />
+                        </ion-thumbnail>
+                      </ion-col>
+                      <ion-col>
+                       <ion-label>
+                          <span>Phone Number</span><br>
+                          <span>{{obj.phone}}</span>
+                        </ion-label>
+                      </ion-col>
+                      <ion-col>
+                        <ion-label>
+                          <span>Rate</span><br>
+                          <span>{{obj.seatNo}}</span>
+                        </ion-label>
+                      </ion-col>
+                    </ion-row>
+                    </ion-grid>
+                </ion-label>
+            </ion-list>
+          </ion-card-content>
+          <div class="ion-text-center"> 
+            <ion-button fill="clear" >Call Driver</ion-button>
+            <ion-button fill="clear" [routerLink]="['/chats', obj.userID]">Send Chat</ion-button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <h2 class="ion-text-center"><b>Co-Passengers</b></h2>
+        <ion-card class="available-card" *ngFor="let obj2 of co_passengers">
+          <ion-card-header class="">
+            <ion-card-title>Name: {{obj2.fullname}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+                <ion-label>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <ion-thumbnail slot start>
+                          <img alt="Silhouette of mountains" src="../../../assets/icon/favicon.png" />
+                        </ion-thumbnail>
+                      </ion-col>
+                      <ion-col>
+                       <ion-label>
+                          <span>Phone Number</span><br>
+                          <span>{{obj2.phone}}</span>
+                        </ion-label>
+                      </ion-col>
+                    </ion-row>
+                    </ion-grid>
+                </ion-label>
+            </ion-list>
+          </ion-card-content>
+          <div class="ion-text-center"> 
+            <ion-button fill="clear" [routerLink]="['/chats', obj2.userID]">Send Chat</ion-button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,24 +1,35 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1">
+    <ion-tab-button tab="home">
       <ion-icon aria-hidden="true" name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab2">
+    <ion-tab-button tab="rides">
       <ion-icon aria-hidden="true" name="car"></ion-icon>
       <ion-label>Ride</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab3">
+    <ion-tab-button tab="chat">
       <ion-icon aria-hidden="true" name="mail"></ion-icon>
       <ion-label>Chat</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="tab3">
+
+    <ion-tab-button id="click-trigger">
       <ion-icon aria-hidden="true" name="menu"></ion-icon>
-      <ion-label>Chat</ion-label>
+      <ion-label>Menu</ion-label>
     </ion-tab-button>
+
+    <ion-popover trigger="click-trigger" triggerAction="click">
+      <ng-template>
+        <ion-content class="ion-padding">Hello World!</ion-content>
+        <ion-content class="ion-padding">Hello World!</ion-content>
+        <ion-content class="ion-padding">Hello World!</ion-content>
+        <ion-content class="ion-padding">Hello World!</ion-content>
+        <ion-content class="ion-padding" (click)="logout()">Logout</ion-content>
+      </ng-template>
+    </ion-popover>
 
   </ion-tab-bar>
 

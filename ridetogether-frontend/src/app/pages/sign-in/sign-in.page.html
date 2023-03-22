@@ -1,0 +1,24 @@
+<div class="logo">
+  <div class="align-items-center">
+    <div class="ion-text-center">
+      <img class="homeIMG" src="../../../../assets/Screenshot_2023-03-17_at_15.54.42-removebg-preview.png">
+      <h1 class="headerFont">Sign up</h1>
+
+      <form [formGroup]="loginForm">
+        <div id="container ion-text-center">
+            <ion-item fill="outline">
+              <ion-label><ion-icon aria-hidden="true" name="menu"></ion-icon></ion-label>
+              <ion-input placeholder="Enter your email" formControlName="email"></ion-input>
+            </ion-item><br>
+            <ion-item fill="outline">
+              <ion-label><ion-icon aria-hidden="true" name="menu"></ion-icon></ion-label>
+              <ion-input placeholder="Enter your password" type="password" formControlName="password"></ion-input>
+            </ion-item><br>
+          <br><br>
+        </div>
+        <button id="getStarted"  (click)="login()" >Submit</button>
+        </form>
+      <p class="icon">Don't have an account <span [routerLink]="['/auth/signup']" class="icon1">Register</span></p>
+    </div>
+  </div>
+</div>

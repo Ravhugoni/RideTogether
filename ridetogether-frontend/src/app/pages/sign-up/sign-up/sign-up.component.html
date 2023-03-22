@@ -1,3 +1,36 @@
-<p>
-  sign-up works!
-</p>
+<div class="logo">
+  <div class="align-items-center">
+    <div class="ion-text-center">
+      <img class="homeIMG" src="../../../../assets/Screenshot_2023-03-17_at_15.54.42-removebg-preview.png">
+      <h1 class="headerFont">Sign up</h1>
+
+      <form [formGroup]="registerForm">
+        <div id="container">
+            <ion-item fill="outline">
+              <ion-label><ion-icon aria-hidden="true" name="user"></ion-icon></ion-label>
+              <ion-input placeholder="Enter your fullname" formControlName="fullname"></ion-input>
+            </ion-item><br>
+            <ion-item fill="outline">
+              <ion-label><ion-icon aria-hidden="true" name="menu"></ion-icon></ion-label>
+              <ion-input placeholder="Enter your phone" formControlName="phone"></ion-input>
+            </ion-item><br>
+            <ion-item fill="outline">
+              <ion-label><ion-icon aria-hidden="true" name="menu"></ion-icon></ion-label>
+              <ion-input placeholder="Enter your email" formControlName="email"></ion-input>
+            </ion-item><br>
+            <ion-item fill="outline">
+              <ion-label><ion-icon aria-hidden="true" name="menu"></ion-icon></ion-label>
+              <ion-input placeholder="Enter your password" type="password" formControlName="password"></ion-input>
+            </ion-item><br>
+            <ion-item fill="outline" style="border-color: black;">
+              <ion-label><ion-icon aria-hidden="true" name="menu"></ion-icon></ion-label>
+              <ion-input placeholder="Confirm your password" type="password" formControlName="confirm_password"></ion-input>
+            </ion-item><br>
+          <br><br>
+        </div>
+        <button id="getStarted"  (click)="register()" >Submit</button>
+        </form>
+      <p>Joined us before? <span [routerLink]="['/sign-in']" class="icon1">Login</span></p>
+    </div>
+  </div>
+</div>

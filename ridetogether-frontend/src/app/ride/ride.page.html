@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Ride history & request
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div *ngIf="booking?.length != 0">
+    <ion-card class="available-card"  *ngFor="let obj of booking">
+    <ion-card-header class="">
+      <ion-card-title>Booking Details</ion-card-title>
+      <ion-row>
+          <ion-col>
+            <ion-card-subtitle>Car Name: {{obj.carName}}</ion-card-subtitle>
+          </ion-col>
+          <ion-col>
+            <ion-card-subtitle id="status-completed" class="ion-text-center" *ngIf="obj.bk_status == 'completed'">{{obj.bk_status}} Ride</ion-card-subtitle>
+            <ion-card-subtitle id="status-pending" class="ion-text-center" *ngIf="obj.bk_status == 'pending'">{{obj.bk_status}} Ride</ion-card-subtitle>
+            <ion-card-subtitle id="status-booked" class="ion-text-center" *ngIf="obj.bk_status == 'booked'">{{obj.bk_status}} Ride</ion-card-subtitle>
+            <ion-card-subtitle id="status-cancelled" class="ion-text-center" *ngIf="obj.bk_status == 'cancelled'">{{obj.bk_status}} Ride</ion-card-subtitle>
+          </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+          <ion-label [routerLink]="['/tab/rides', obj.bookingID]">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-thumbnail slot start> 
+                    <img alt="Silhouette of mountains" src="../../../assets/icon/favicon.png" />
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col>
+                  <ion-label>
+                    <span>Number Plate</span><br>
+                    <span>{{obj.numberPlate}} uppercase</span>
+                  </ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-label>
+                    <span>Make</span><br>
+                    <span>{{obj.make}}</span>
+                  </ion-label>
+                </ion-col>
+                
+              </ion-row>
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-label>
+                    <span><b>Price : </b></span>
+                    <span>R59</span>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+          </ion-label>
+      </ion-list>
+    </ion-card-content>
+
+    <div class="ion-text-center">
+      <ion-button fill="clear" [routerLink]="['/tab/chat']" *ngIf="obj.bk_status != 'completed' && obj.bk_status != 'booked'">Share Ride</ion-button>
+      <ion-button fill="clear" [routerLink]="['/tab/home']">View</ion-button>
+      <ion-button fill="clear" [routerLink]="['/tab/home']" *ngIf="obj.bk_status != 'completed'">Cancel</ion-button>
+    </div>
+  </ion-card>
+  </div>
+
+  <ion-grid *ngIf="booking?.length == 0">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <h2><b>You don't have any ride history!</b></h2>
+        <p>Book your first Ride</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <button class="ion-text-center" id="ride-btn" [routerLink]="['/tab/home/search-ride']">Get Ride</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,60 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #ride-btn
+{
+    width: 333px;
+    height: 44px;
+    background: #E76422 !important;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#status-completed
+{
+  width: 103px;
+  height: 24px;
+  background-color: rgba(3, 150, 3, 0.767);
+  border-radius: 5px;
+  color: #ffffff;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#status-booked
+{
+  width: 103px;
+  height: 24px;
+  background-color: rgba(0, 0, 214, 0.829);
+  border-radius: 5px;
+  color: #ffffff;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#status-pending
+{
+  width: 103px;
+  height: 24px;
+  background-color: rgba(255, 217, 0, 0.952);
+  border-radius: 5px;
+  color: #ffffff;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#status-cancelled
+{
+  width: 103px;
+  height: 24px;
+  background-color: rgba(230, 1, 1, 0.856);
+  border-radius: 5px;
+  color: #ffffff;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
