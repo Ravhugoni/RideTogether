@@ -10,6 +10,7 @@
   .card{
     border-radius: 34px;
     color: black;
+    // height: 0px;
   }
 
   .headerFont{
@@ -20,4 +21,8 @@
     justify-content: center;
     color: #E76422;
 
+}
+
+.card img{
+  height: 150px;
 }

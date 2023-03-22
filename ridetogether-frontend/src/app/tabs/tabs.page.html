@@ -1,3 +1,4 @@
+
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
@@ -15,22 +16,43 @@
       <ion-icon aria-hidden="true" name="mail"></ion-icon>
       <ion-label>Chat</ion-label>
     </ion-tab-button>
+  
 
-    <ion-tab-button id="click-trigger">
-      <ion-icon aria-hidden="true" name="menu"></ion-icon>
-      <ion-label>Menu</ion-label>
+    <ion-tab-button>
+      <div class="ion-page" id="main-content">
+          <ion-menu-toggle>
+            <ion-icon aria-hidden="true" name="menu" id="menu"></ion-icon><br>
+            <ion-label>Menu</ion-label>
+          </ion-menu-toggle>
+        <!-- </ion-content> -->
+      </div>
     </ion-tab-button>
 
-    <ion-popover trigger="click-trigger" triggerAction="click">
-      <ng-template>
-        <ion-content class="ion-padding">Hello World!</ion-content>
-        <ion-content class="ion-padding">Hello World!</ion-content>
-        <ion-content class="ion-padding">Hello World!</ion-content>
-        <ion-content class="ion-padding">Hello World!</ion-content>
-        <ion-content class="ion-padding" (click)="logout()">Logout</ion-content>
-      </ng-template>
-    </ion-popover>
 
   </ion-tab-bar>
 
 </ion-tabs>
+
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item>
+        <p>Profile</p>
+      </ion-item>
+
+      <ion-item>
+        <p>
+          <ion-menu-toggle>
+            <a (click)="logout()">Sign-out</a>
+          </ion-menu-toggle></p>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
