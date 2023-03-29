@@ -1,5 +1,7 @@
 {
   "name": "ridetogether-frontend",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

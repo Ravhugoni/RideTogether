@@ -66,7 +66,7 @@
 
     <div class="ion-text-center">
       <ion-button fill="clear" [routerLink]="['/tab/chat']" *ngIf="obj.bk_status != 'completed' && obj.bk_status != 'booked'">Share Ride</ion-button>
-      <ion-button fill="clear" [routerLink]="['/tab/home']">View</ion-button>
+      <ion-button fill="clear" [routerLink]="['/tab/rides', obj.bookingID]">View</ion-button>
       <ion-button fill="clear" [routerLink]="['/tab/home']" *ngIf="obj.bk_status != 'completed'">Cancel</ion-button>
     </div>
   </ion-card>

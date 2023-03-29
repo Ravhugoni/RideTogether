@@ -1,7 +1,7 @@
 const  bcrypt  =  require("bcrypt");
 const  jwt  =  require("jsonwebtoken");
 
-const pool = require("../../connection/connection")
+const pool = require("../connection/connection")
 
 //Registration Function
 

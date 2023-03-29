@@ -1,25 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="/tab/home"></ion-back-button> -->
+    </ion-buttons>
+    <ion-title>Roles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
+ 
     <div id="container">
-      <strong class="headerFont">Select your role</strong>
+      
+      <p class="headerFont mt-20">Select your role</p>
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-card class="card" [routerLink]="['/tab/rides']">
-              <img alt="Silhouette of mountains" src="../../assets/608-6080012_animated-car-transparent-background-hd-png-download.png" />
-              <ion-card-header>
-                <ion-card-title>Give Ride</ion-card-title>
-              </ion-card-header>
-            </ion-card>
+            <div class="card w-90 bg-base-100 shadow-xl image-full" [routerLink]="['/tab/rides']">
+              <figure><img src="../../assets/608-6080012_animated-car-transparent-background-hd-png-download.png" alt="Shoes" /></figure>
+              <div class="card-body">
+                <h2 class="card-title">Give Ride!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                  <button class="btn glass">Give Ride</button>
+                </div>
+              </div>
+            </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-card class="card" [routerLink]="['/tab/home/search-ride']">
-              <img alt="Silhouette of mountains" src="../../assets/608-6080012_animated-car-transparent-background-hd-png-download.png" />
-              <ion-card-header>
-                <ion-card-title>Take Ride</ion-card-title>
-              </ion-card-header>
-            </ion-card>
+            <div class="card w-90 bg-base-100 shadow-xl image-full" [routerLink]="['/tab/home/search-ride']">
+              <figure><img src="../../assets/608-6080012_animated-car-transparent-background-hd-png-download.png" alt="Shoes" /></figure>
+              <div class="card-body">
+                <h2 class="card-title">Take Ride!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                  <button class="btn glass">Take Ride</button>
+                </div>
+              </div>
+            </div>
           </ion-col>
         </ion-row>
       </ion-grid>

@@ -18,7 +18,7 @@
 
 // SELECT * FROM public.vehicle WHERE "carID" not in (SELECT carID FROM BOOKING  WHERE pickup_date BETWEEN '2023-03-20 21:14:58.104093+02' AND '2023-03-20 23:13:58.104093+02' OR dropoff_date BETWEEN '2023-03-20 21:14:58.104093+02' AND '2023-03-20 23:13:58.104093+02') AND status = 'available';
 
-const pool = require("../../connection/connection")
+const pool = require("../connection/connection")
 
 const addMasege = (req, res) => {
 

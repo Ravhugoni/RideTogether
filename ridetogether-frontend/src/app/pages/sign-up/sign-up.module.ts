@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule,
     SignUpPageRoutingModule
   ],
-  declarations: [SignUpPage, SignUpRideComponent, SignUpTrakingComponent, SignUpPromComponent, SignUpLocationComponent, SignUpComponent]
+  declarations: [
+    SignUpPage, SignUpRideComponent, SignUpTrakingComponent, SignUpPromComponent, 
+    SignUpLocationComponent, SignUpComponent]
 })
 export class SignUpPageModule {}

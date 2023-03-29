@@ -1,0 +1,54 @@
+.card{
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin: 10px 10px;
+    border-radius: 10px;
+}
+
+#profile-img
+{
+    width: 150px;
+    height: 150px;
+    background-color: #ffff !important;
+    border-radius: 50%;
+    padding:5px;
+    margin-top: -40px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+    position: absolute;
+    top: -10px;
+    object-fit: cover;
+
+
+    //position: absolute;
+   
+}
+
+#profile-img ion-avatar
+{
+    --border-radius: 4px;
+}
+
+.main{
+    margin-top: 7rem;
+}
+
+#getStarted{
+    width: 333px;
+    height: 44px;
+    background: #E76422;
+    border-radius: 15px;
+    color: #ffffff;
+    margin-bottom: 10px;
+ }
+.form{
+    margin-top: 110px;
+}
+
+

@@ -1,7 +1,12 @@
 <div class="logo">
   <div class="align-items-center">
     <div class="ion-text-center">
-      <img class="homeIMG" src="../../../../assets/Screenshot_2023-03-17_at_15.54.42-removebg-preview.png">
+
+      <div class="avatar">
+        <div class="w-36 rounded">
+          <img class="homeIMG" src="../../../../assets/Screenshot_2023-03-17_at_15.54.42-removebg-preview.png">
+        </div>
+      </div>
       <h1 class="headerFont">Sign up</h1>
 
       <form [formGroup]="registerForm">
@@ -19,14 +24,13 @@
               <ion-input placeholder="Enter your email" formControlName="email"></ion-input>
             </ion-item><br>
             <ion-item fill="outline">
-              <ion-label><ion-icon aria-hidden="true" name="unlock"></ion-icon></ion-label>
+              <ion-label><ion-icon aria-hidden="true" name="lock-closed"></ion-icon></ion-label>
               <ion-input placeholder="Enter your password" type="password" formControlName="password"></ion-input>
             </ion-item><br>
             <ion-item fill="outline">
-              <ion-label><ion-icon aria-hidden="true" name="lock"></ion-icon></ion-label>
+              <ion-label><ion-icon aria-hidden="true" name="lock-closed"></ion-icon></ion-label>
               <ion-input placeholder="Confirm your password" type="password" formControlName="confirm_password"></ion-input>
             </ion-item><br>
-          <br><br>
         </div>
         <button id="getStarted"  (click)="register()" >Submit</button>
         </form>

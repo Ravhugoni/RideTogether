@@ -1,4 +1,4 @@
-const pool = require('../../connection/connection');
+const pool = require('../connection/connection');
 
 const handleErr = (err, req, res, next) => {
   res.status(400).send({ error: err.message })

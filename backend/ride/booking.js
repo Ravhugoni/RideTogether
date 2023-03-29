@@ -1,5 +1,5 @@
 
-const pool = require("../../connection/connection")
+const pool = require("../connection/connection")
 
 const addBooking = (req, res) => {
 

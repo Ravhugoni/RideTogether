@@ -1,5 +1,6 @@
 
-const pool = require("../../connection/connection")
+const pool = require("../connection/connection")
+const io = require('socket.io')
 
 const addMasege = (req, res) => {
 
@@ -22,8 +23,27 @@ const addMasege = (req, res) => {
     })
   }
 
+  const socket = (req, res) =>{
+
+    req.body;
+    
+    io.on('connection', (socket) => {
+      console.log('a user connected');
+    
+      socket.on('message', (message) => {
+        console.log(message);
+        io.emit('message', `${socket.id.substr(0, 2)} said ${message}`);
+      });
+    
+      socket.on('disconnect', () => {
+        console.log('a user disconnected!');
+      });
+    });
+  }
+
   module.exports = {
     addMasege,
-    GetMessageByRoom
+    GetMessageByRoom,
+    socket
   }
   

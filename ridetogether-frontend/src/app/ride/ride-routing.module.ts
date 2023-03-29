@@ -16,6 +16,10 @@ const routes: Routes = [
     // path: 'booked-ride',
     path: ':id',
     loadChildren: () => import('./booked-ride/booked-ride.module').then( m => m.BookedRidePageModule)
+  },
+  {
+    path: 'shared-ride',
+    loadChildren: () => import('./shared-ride/shared-ride.module').then( m => m.SharedRidePageModule)
   }
 
 ];

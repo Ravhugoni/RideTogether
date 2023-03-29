@@ -30,7 +30,7 @@ export class SignInPage implements OnInit {
       color:clr,
       buttons: [
         {
-          icon:'home'
+          icon:'close'
           
         }
       ]

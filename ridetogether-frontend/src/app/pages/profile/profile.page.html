@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="">
+
+  <div class="ion-text-center main">
+    <form [formGroup]="EditUserForm">
+      <div class="card">
+      
+          <img id="profile-img" alt="Silhouette of a person's head" src="../../../assets/608-6080012_animated-car-transparent-background-hd-png-download.png" />
+     
+          <div class="form">
+            <div id="container ion-text-center">
+                <ion-item fill="outline">
+                  <ion-label><ion-icon aria-hidden="true" name="person"></ion-icon></ion-label>
+                  <ion-input placeholder="Enter your fullname" formControlName="fullname"></ion-input>
+                </ion-item><br>
+                <ion-item fill="outline">
+                  <ion-label><ion-icon aria-hidden="true" name="call"></ion-icon></ion-label>
+                  <ion-input placeholder="Enter your phone" formControlName="phone"></ion-input>
+                </ion-item><br>
+                <ion-item fill="outline">
+                  <ion-label><ion-icon aria-hidden="true" name="mail"></ion-icon></ion-label>
+                  <ion-input placeholder="Enter your email" formControlName="email"></ion-input>
+                </ion-item><br>
+                <ion-item fill="outline">
+                  <ion-label><ion-icon aria-hidden="true" name="map"></ion-icon></ion-label>
+                  <ion-textarea placeholder="Enter your address" formControlName="address"></ion-textarea>
+                </ion-item>
+            </div>
+            <button id="getStarted">Update</button>
+          </div>
+
+
+      </div>
+    </form>
+  </div>
+</ion-content>

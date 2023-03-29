@@ -28,7 +28,6 @@
       </div>
     </ion-tab-button>
 
-
   </ion-tab-bar>
 
 </ion-tabs>
@@ -43,7 +42,10 @@
   <ion-content class="ion-padding">
     <ion-list>
       <ion-item>
-        <p>Profile</p>
+        <p [routerLink]="['/profile']">Shared Rides</p>
+      </ion-item>
+      <ion-item>
+        <p [routerLink]="['/profile']">Profile</p>
       </ion-item>
 
       <ion-item>
